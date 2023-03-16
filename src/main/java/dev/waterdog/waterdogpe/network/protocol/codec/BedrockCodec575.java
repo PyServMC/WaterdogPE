@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 WaterdogTEAM
+ * Copyright 2023 WaterdogTEAM
  * Licensed under the GNU General Public License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,10 +17,10 @@ package dev.waterdog.waterdogpe.network.protocol.codec;
 
 import dev.waterdog.waterdogpe.network.protocol.ProtocolVersion;
 
-public class BedrockCodec568 extends BedrockCodec567Patch {
+public class BedrockCodec575 extends BedrockCodec568 {
 
     @Override
     public ProtocolVersion getProtocol() {
-        return ProtocolVersion.MINECRAFT_PE_1_19_63;
+        return ProtocolVersion.MINECRAFT_PE_1_19_70;
     }
 }
