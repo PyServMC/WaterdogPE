@@ -80,7 +80,7 @@ public class ConnectedDownstreamHandler extends AbstractDownstreamHandler {
         if (this.player.sendToFallback(this.client.getServerInfo(), packet.getKickMessage())) {
             throw CancelSignalException.CANCEL;
         }
-        this.player.disconnect(new TranslationContainer("waterdog.downstream.kicked", packet.getKickMessage()));
+        this.player.disconnect("§bPy§fCMC§7.EU §r§8| §cDu wurdest vom Server gekickt§8: §7" + packet.getKickMessage());
         throw CancelSignalException.CANCEL;
     }
 }

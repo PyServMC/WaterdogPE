@@ -168,7 +168,8 @@ public class HandshakeUtils {
         if (config.useLoginExtras()) {
             // Add waterdog attributes
             clientData.addProperty("Waterdog_XUID", extraData.get("XUID").getAsString());
-            clientData.addProperty("Waterdog_IP", session.getAddress().getAddress().getHostAddress());
+            clientData.addProperty("Waterdog_IP", "127.0.0.1");
+            clientData.addProperty("Client_IP", session.getAddress().getAddress().getHostAddress());
         }
         return clientData;
     }

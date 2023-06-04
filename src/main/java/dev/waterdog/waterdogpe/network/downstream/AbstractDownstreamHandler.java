@@ -90,11 +90,13 @@ public abstract class AbstractDownstreamHandler implements BedrockPacketHandler 
                 }
                 throw CancelSignalException.CANCEL;
             case LOGIN_FAILED_CLIENT_OLD:
+                message = "§bPy§fCMC§7.EU §r§8| §cClient veraltet \n§eBitte aktualisiere dein Minecraft um auf PyCMC spielen zu können!";
+                break;
             case LOGIN_FAILED_SERVER_OLD:
-                message = "Incompatible version";
+                message = "§bPy§fCMC§7.EU §r§8| §cServer noch nicht aktualisiert \n§eDer Server wurde noch nicht auf die neueste Version aktualisiert. Bitte versuche es später erneut.";
                 break;
             case FAILED_SERVER_FULL_SUB_CLIENT:
-                message = "Server is full";
+                message = "§bPy§fCMC§7.EU §r§8| §cServer voll \n§eDer Server ist voll. Bitte versuche es später erneut.";
                 break;
             default:
                 return false;

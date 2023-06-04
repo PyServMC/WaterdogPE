@@ -328,7 +328,7 @@ public class ProxyServer {
 
         DispatchCommandEvent event = new DispatchCommandEvent(sender, args[0], shiftedArgs);
         this.eventManager.callEvent(event);
-        return !event.isCancelled() && this.commandMap.handleCommand(sender, args[0], shiftedArgs);
+        return event.isCancelled() || this.commandMap.handleCommand(sender, args[0], shiftedArgs);
     }
 
     public BedrockClient createBedrockClient() {
