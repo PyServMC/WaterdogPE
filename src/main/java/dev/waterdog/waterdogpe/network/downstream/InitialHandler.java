@@ -38,7 +38,6 @@ import java.util.Base64;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class InitialHandler extends AbstractDownstreamHandler {
-
     public InitialHandler(ProxiedPlayer player, DownstreamClient client) {
         super(player, client);
     }
@@ -72,6 +71,16 @@ public class InitialHandler extends AbstractDownstreamHandler {
         ClientToServerHandshakePacket clientToServerHandshake = new ClientToServerHandshakePacket();
         this.player.getDownstream().sendPacket(clientToServerHandshake);
         throw CancelSignalException.CANCEL;
+    }
+
+    @Override
+    public final boolean handle(ItemComponentPacket packet) {
+        if (this.player.isItemComponentPacketSent()) {
+            throw CancelSignalException.CANCEL;
+        }
+
+        this.player.sendItemComponentPacket();
+        return false;
     }
 
     @Override

@@ -65,6 +65,16 @@ public class ConnectedUpstreamHandler extends AbstractUpstreamHandler {
     }
 
     @Override
+    public final boolean handle(ItemComponentPacket packet) {
+        if (this.player.isItemComponentPacketSent()) {
+            throw CancelSignalException.CANCEL;
+        }
+
+        this.player.sendItemComponentPacket();
+        return false;
+    }
+
+    @Override
     public final boolean handle(CommandRequestPacket packet) {
         String message = packet.getCommand();
         if (this.player.getProxy().handlePlayerCommand(this.player, message)) {

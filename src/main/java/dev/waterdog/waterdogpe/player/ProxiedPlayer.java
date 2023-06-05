@@ -108,6 +108,8 @@ public class ProxiedPlayer implements CommandSender {
     private final List<PacketHandler> pluginUpstreamHandlers = new ObjectArrayList<>();
     private final List<PacketHandler> pluginDownstreamHandlers = new ObjectArrayList<>();
 
+    private boolean itemComponentPacketSent = false;
+
     public ProxiedPlayer(ProxyServer proxy, BedrockServerSession session, CompressionAlgorithm compression, LoginData loginData) {
         this.proxy = proxy;
         this.upstream = session;
@@ -115,6 +117,18 @@ public class ProxiedPlayer implements CommandSender {
         this.loginData = loginData;
         this.rewriteMaps = new RewriteMaps(this);
         this.proxy.getPlayerManager().subscribePermissions(this);
+    }
+
+    public void sendItemComponentPacket() {
+        if (this.itemComponentPacketSent) {
+            return;
+        }
+
+        this.itemComponentPacketSent = true;
+    }
+
+    public boolean isItemComponentPacketSent() {
+        return this.itemComponentPacketSent;
     }
 
     /**

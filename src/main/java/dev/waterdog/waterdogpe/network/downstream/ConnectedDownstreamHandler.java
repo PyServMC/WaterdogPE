@@ -76,6 +76,16 @@ public class ConnectedDownstreamHandler extends AbstractDownstreamHandler {
     }
 
     @Override
+    public final boolean handle(ItemComponentPacket packet) {
+        if (this.player.isItemComponentPacketSent()) {
+            throw CancelSignalException.CANCEL;
+        }
+
+        this.player.sendItemComponentPacket();
+        return false;
+    }
+
+    @Override
     public final boolean handle(DisconnectPacket packet) {
         if (this.player.sendToFallback(this.client.getServerInfo(), packet.getKickMessage())) {
             throw CancelSignalException.CANCEL;

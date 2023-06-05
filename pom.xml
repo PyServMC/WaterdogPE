@@ -16,7 +16,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <raklib.version>1.6.28-SNAPSHOT</raklib.version>
         <protocol.protocol>bedrock-v582</protocol.protocol>
-        <protocol.version>develop-a19835b1f1-1</protocol.version>
+        <protocol.version>develop-SNAPSHOT</protocol.version>
         <log4j2.version>2.17.1</log4j2.version>
         <jline.version>3.21.0</jline.version>
     </properties>
@@ -39,18 +39,6 @@
             <url>https://jitpack.io</url>
         </repository>
     </repositories>
-
-    <distributionManagement>
-        <repository>
-            <id>gomme-releases</id>
-            <url>https://repo.gomme.dev/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>gomme-snapshots</id>
-            <url>https://repo.gomme.dev/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
 
     <dependencies>
         <dependency>
@@ -161,7 +149,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Kaooot.Protocol</groupId>
+            <groupId>com.github.alvin0319.Protocol</groupId>
             <artifactId>${protocol.protocol}</artifactId>
             <version>${protocol.version}</version>
             <scope>compile</scope>

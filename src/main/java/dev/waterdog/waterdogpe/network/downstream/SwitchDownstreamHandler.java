@@ -81,6 +81,16 @@ public class SwitchDownstreamHandler extends AbstractDownstreamHandler {
     }
 
     @Override
+    public final boolean handle(ItemComponentPacket packet) {
+        if (this.player.isItemComponentPacketSent()) {
+            throw CancelSignalException.CANCEL;
+        }
+
+        this.player.sendItemComponentPacket();
+        return false;
+    }
+
+    @Override
     public final boolean handle(ResourcePackStackPacket packet) {
         ResourcePackClientResponsePacket response = new ResourcePackClientResponsePacket();
         response.setStatus(ResourcePackClientResponsePacket.Status.COMPLETED);
