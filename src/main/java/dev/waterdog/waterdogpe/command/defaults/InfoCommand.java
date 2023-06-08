@@ -24,7 +24,7 @@ import dev.waterdog.waterdogpe.command.CommandSettings;
 public class InfoCommand extends Command {
 
     public InfoCommand() {
-        super("wdinfo", CommandSettings.builder()
+        super("sinfo", CommandSettings.builder()
                 .setDescription("waterdog.command.info.description")
                 .setUsageMessage("waterdog.command.info.usage")
                 .setPermission("waterdog.command.info.permission")
