@@ -149,7 +149,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.alvin0319.Protocol</groupId>
+            <groupId>com.github.Kaooot.Protocol</groupId>
             <artifactId>${protocol.protocol}</artifactId>
             <version>${protocol.version}</version>
             <scope>compile</scope>
