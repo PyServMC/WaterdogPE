@@ -8,15 +8,15 @@
     </description>
     <groupId>dev.waterdog.waterdogpe</groupId>
     <artifactId>waterdog</artifactId>
-    <version>1.2.4-GHD-SNAPSHOT</version>
+    <version>WDPE-CUSTOM</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>17</maven.compiler.release>
         <raklib.version>1.6.28-SNAPSHOT</raklib.version>
-        <protocol.protocol>bedrock-v589</protocol.protocol>
-        <protocol.version>develop-16e17db006-1</protocol.version>
+        <protocol.protocol>bedrock-v594</protocol.protocol>
+        <protocol.version>3da7c3db3eef7c2fd3e1f81b6f8fd878e21cdbde</protocol.version>
         <log4j2.version>2.17.1</log4j2.version>
         <jline.version>3.21.0</jline.version>
     </properties>
@@ -31,8 +31,8 @@
             <url>https://repo.opencollab.dev/maven-snapshots/</url>
         </repository>
         <repository>
-            <id>waterdog</id>
-            <url>https://repo.waterdog.dev/artifactory/main/</url>
+            <id>waterdogpe-repo-main</id>
+            <url>https://repo.waterdog.dev/main</url>
         </repository>
         <repository>
             <id>jitpack</id>
