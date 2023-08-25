@@ -16,7 +16,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <raklib.version>1.6.28-SNAPSHOT</raklib.version>
         <protocol.protocol>bedrock-v594</protocol.protocol>
-        <protocol.version>3da7c3db3eef7c2fd3e1f81b6f8fd878e21cdbde</protocol.version>
+        <protocol.version>dca64a435b70cb2ff08963caf5686f98c44fdd72</protocol.version>
         <log4j2.version>2.17.1</log4j2.version>
         <jline.version>3.21.0</jline.version>
     </properties>
@@ -149,7 +149,7 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Kaooot.Protocol</groupId>
+            <groupId>com.github.iPyCMC.Protocol</groupId>
             <artifactId>${protocol.protocol}</artifactId>
             <version>${protocol.version}</version>
             <scope>compile</scope>

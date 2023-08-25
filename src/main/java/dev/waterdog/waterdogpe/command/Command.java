@@ -15,10 +15,7 @@
 
 package dev.waterdog.waterdogpe.command;
 
-import com.nukkitx.protocol.bedrock.data.command.CommandData;
-import com.nukkitx.protocol.bedrock.data.command.CommandEnumData;
-import com.nukkitx.protocol.bedrock.data.command.CommandParam;
-import com.nukkitx.protocol.bedrock.data.command.CommandParamData;
+import com.nukkitx.protocol.bedrock.data.command.*;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.*;
@@ -84,13 +81,24 @@ public abstract class Command {
         return this.settings.getAliases();
     }
 
-    public CommandData craftNetwork() {
+    /*public CommandData craftNetwork() {
         CommandParamData[][] parameterData = new CommandParamData[][]{{
                 new CommandParamData(this.name, true, null, CommandParam.TEXT, null, Collections.emptyList())
         }};
         Set<String> aliases = new HashSet<>(getAliases().length + 1);
         Collections.addAll(aliases, getAliases());
         aliases.add(this.name);
-        return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(ArrayUtils.EMPTY_STRING_ARRAY), false), parameterData);
+        //return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(ArrayUtils.EMPTY_STRING_ARRAY), false), parameterData);
+        return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(new String[0]), false), parameterData);
+    }*/
+
+    private CommandData craftNetwork() {
+        return new CommandData(this.name,
+                this.getDescription(),
+                List.of(),
+                0,
+                new CommandEnumData(this.name + "_aliases", new String[0], false),
+                Collections.emptyList(),
+                new CommandOverloadData[0]);
     }
 }

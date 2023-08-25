@@ -67,12 +67,12 @@ public class SendCommand extends Command {
         return true;
     }
 
-    @Override
+    /*@Override
     public CommandData craftNetwork() {
         CommandParamData[][] parameterData = new CommandParamData[][]{{
                 new CommandParamData("destination", false, null, CommandParam.TEXT, null, Collections.emptyList()),
                 new CommandParamData("target", true, null, CommandParam.TEXT, null, Collections.emptyList())
         }};
         return new CommandData(this.getName(), this.getDescription(), Collections.emptyList(), (byte) 0, null, parameterData);
-    }
+    }*/
 }
