@@ -18,7 +18,9 @@ package dev.waterdog.waterdogpe.command;
 import com.nukkitx.protocol.bedrock.data.command.*;
 import org.apache.commons.lang3.ArrayUtils;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Base class for proxy commands
@@ -81,24 +83,15 @@ public abstract class Command {
         return this.settings.getAliases();
     }
 
-    /*public CommandData craftNetwork() {
-        CommandParamData[][] parameterData = new CommandParamData[][]{{
-                new CommandParamData(this.name, true, null, CommandParam.TEXT, null, Collections.emptyList())
-        }};
+    public CommandData craftNetwork() {
+        CommandOverloadData[] parameterData = new CommandOverloadData[]{
+                new CommandOverloadData(false, new CommandParamData[]{
+                        new CommandParamData(this.name, true, null, CommandParam.TEXT, null, Collections.emptyList())
+                })
+        };
         Set<String> aliases = new HashSet<>(getAliases().length + 1);
         Collections.addAll(aliases, getAliases());
         aliases.add(this.name);
-        //return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(ArrayUtils.EMPTY_STRING_ARRAY), false), parameterData);
-        return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(new String[0]), false), parameterData);
-    }*/
-
-    private CommandData craftNetwork() {
-        return new CommandData(this.name,
-                this.getDescription(),
-                List.of(),
-                0,
-                new CommandEnumData(this.name + "_aliases", new String[0], false),
-                Collections.emptyList(),
-                new CommandOverloadData[0]);
+        return new CommandData(this.name, this.getDescription(), Collections.emptyList(), (byte) 0, new CommandEnumData(this.name, aliases.toArray(ArrayUtils.EMPTY_STRING_ARRAY), false), Collections.emptyList(), parameterData);
     }
 }
