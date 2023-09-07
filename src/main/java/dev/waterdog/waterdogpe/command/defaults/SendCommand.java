@@ -68,7 +68,7 @@ public class SendCommand extends Command {
         return true;
     }
 
-    /*@Override
+    @Override
     public CommandData craftNetwork() {
         CommandOverloadData[] parameterData = new CommandOverloadData[]{
                 new CommandOverloadData(false, new CommandParamData[]{

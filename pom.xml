@@ -16,7 +16,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <raklib.version>1.6.28-SNAPSHOT</raklib.version>
         <protocol.protocol>bedrock-v594</protocol.protocol>
-        <protocol.version>dca64a435b70cb2ff08963caf5686f98c44fdd72</protocol.version>
+        <protocol.version>d305acaa1884b087a59db1af22a4af0c71c82e21</protocol.version>
         <log4j2.version>2.17.1</log4j2.version>
         <jline.version>3.21.0</jline.version>
     </properties>
