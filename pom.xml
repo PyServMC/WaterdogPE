@@ -38,6 +38,10 @@
             <id>waterdog</id>
             <url>https://repo.waterdog.dev/artifactory/main/</url>
         </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
     </repositories>
 
     <dependencies>
